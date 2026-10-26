@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="eyebrow">STUDENT PRODUCTIVITY</div>
+      <h1>My To-Do List <span>✦</span></h1>
+      <p>Small steps today, big achievements tomorrow.</p>
+    </header>
+
+    <section class="composer card" aria-label="Add a task">
+      <form id="task-form">
+        <label for="task-input">What do you need to do?</label>
+        <div class="input-row">
+          <input id="task-input" type="text" placeholder="e.g. Finish Python assignment" maxlength="120" required>
+          <button type="submit" class="primary">Add task +</button>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="task-date">Due date (optional)</label>
+            <input id="task-date" type="date">
+          </div>
+          <div>
+            <label for="task-priority">Priority</label>
+            <select id="task-priority">
+              <option value="normal">Normal</option>
+              <option value="high">High</option>
+              <option value="low">Low</option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <section class="stats" aria-label="Task summary">
+      <div class="stat card"><span>Total tasks</span><strong id="total-count">0</strong></div>
+      <div class="stat card"><span>Remaining</span><strong id="remaining-count">0</strong></div>
+      <div class="stat card"><span>Completed</span><strong id="completed-count">0</strong></div>
+    </section>
+
+    <section class="list-section card">
+      <div class="list-heading">
+        <div>
+          <h2>Your tasks</h2>
+          <p>Keep your next step clear.</p>
+        </div>
+        <button id="clear-completed" class="text-button" type="button">Clear completed</button>
+      </div>
+      <div class="filters" role="group" aria-label="Filter tasks">
+        <button class="filter active" data-filter="all" type="button">All</button>
+        <button class="filter" data-filter="active" type="button">Pending</button>
+        <button class="filter" data-filter="completed" type="button">Completed</button>
+      </div>
+      <ul id="task-list" class="task-list"></ul>
+      <div id="empty-state" class="empty-state">
+        <span>📝</span>
+        <h3>No tasks yet</h3>
+        <p>Add your first task above and get started.</p>
+      </div>
+    </section>
+    <footer>Made for students · Your tasks are saved in this browser 💜</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
